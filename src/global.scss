@@ -1,0 +1,31 @@
+$main-color: #fdd2bf;
+$secondary-color: #e98580;
+//$teritary-color: #df5e5e;
+$fourth-color: #b980f0;
+
+$teritary-color: #beaee2;
+
+:root {
+  font-size: 10px;
+}
+
+@mixin displayFlexCentered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+$tab-width: 1024px;
+$mobile-width: 760px;
+
+@mixin tab {
+  @media (max-width: #{$tab-width}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile-width}) {
+    @content;
+  }
+}

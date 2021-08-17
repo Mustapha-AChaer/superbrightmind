@@ -1,0 +1,29 @@
+.app {
+  height: 100vh;
+
+  .sections {
+    width: 100%;
+    height: calc(100vh - 70px);
+
+    position: relative;
+    top: 70px;
+
+    scroll-behavior: smooth;
+    //Snap Code
+    scroll-snap-type: y mandatory;
+
+    //removing the scroll bar
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    > * {
+      //> * this means that for each child
+      width: 100vw;
+      height: calc(100vh - 70px);
+
+      //the snap code
+      scroll-snap-align: start;
+    }
+  }
+}

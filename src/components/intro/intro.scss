@@ -1,0 +1,140 @@
+@import "../../global.scss";
+.intro {
+  background-color: white;
+  display: flex;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left {
+    flex: 0.5;
+    overflow: hidden;
+
+    @include mobile {
+      background-color: white;
+      margin-top: 1rem;
+    }
+
+    .imageContainer {
+      width: 70rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      float: right;
+      img {
+        height: 100%;
+
+        @include mobile {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .right {
+    flex: 0.5;
+    position: relative;
+
+    @include mobile {
+      width: 100%;
+    }
+
+    .wrapper {
+      width: 100%;
+      height: 100%;
+      padding-left: 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: $teritary-color;
+
+      @include mobile {
+        align-items: flex-start;
+      }
+      h1 {
+        font-size: 6rem;
+        margin: 1rem 0;
+
+        @include mobile {
+          font-size: 4rem;
+        }
+      }
+      h2 {
+        font-size: 2.5rem;
+      }
+      h3 {
+        font-size: 3rem;
+        @include mobile {
+          font-size: 2rem;
+        }
+
+        span {
+          font-size: 3rem;
+          letter-spacing: 0.15rem;
+          color: black;
+
+          @include mobile {
+            font-size: 2rem;
+            letter-spacing: normal;
+          }
+        }
+        .ityped-cursor {
+          opacity: 1;
+          -webkit-animation: blink 0.3s infinite;
+          -moz-animation: blink 0.3s infinite;
+          animation: blink 0.3s infinite;
+          animation-direction: alternate;
+        }
+
+        @keyframes blink {
+          100% {
+            opacity: 0;
+          }
+        }
+
+        @-webkit-keyframes blink {
+          100% {
+            opacity: 0;
+          }
+        }
+
+        @-moz-keyframes blink {
+          100% {
+            opacity: 0;
+          }
+        }
+      }
+    }
+
+    a {
+      color: $teritary-color;
+      background-color: $teritary-color;
+      transition: all 0.5s ease;
+      transform-origin: left;
+      .arrowdown {
+        position: absolute;
+        bottom: 1rem;
+        left: 35%;
+        font-size: 8rem;
+        transform-origin: left;
+        transition: all 1s ease;
+
+        @include mobile {
+          left: 43%;
+          font-size: 6rem;
+        }
+      }
+
+      &:hover {
+        color: darken($teritary-color, 50%);
+        .arrowdown {
+          transform: translateX(-10%) translateY(-10%);
+          font-size: 10rem;
+        }
+      }
+    }
+  }
+}
